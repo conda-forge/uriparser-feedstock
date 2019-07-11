@@ -19,13 +19,6 @@ Current build status
 
 
 <table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://travis-ci.org/conda-forge/uriparser-feedstock">
-        <img alt="macOS" src="https://img.shields.io/travis/conda-forge/uriparser-feedstock/master.svg?label=macOS">
-      </a>
-    </td>
-  </tr><tr>
     <td>Appveyor</td>
     <td>
       <a href="https://ci.appveyor.com/project/conda-forge/uriparser-feedstock/branch/master">
