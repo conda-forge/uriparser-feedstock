@@ -1,5 +1,5 @@
 {% set name = "uriparser" %}
-{% set version = "0.9.3" %}
+{% set version = "0.9.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/{{ name }}-{{ version }}.tar.gz
-  sha256: 3ea184e1ef2286e54ce712364780f1b29d1c58233f7a142b11c0550a910e295c
+  sha256: dece5067b4517c4b16cde332c491b4b3508249d2a8f4ba393229575d3c5241c0
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
@@ -34,7 +34,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: COPYING
-  summary: 'RFC 3986 compliant URI parsing and handling library written in C89'
+  summary: RFC 3986 compliant URI parsing and handling library written in C89
 
   description: |
     uriparser is a strictly RFC 3986 compliant URI parsing and handling
