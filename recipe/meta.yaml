@@ -1,5 +1,5 @@
 {% set name = "uriparser" %}
-{% set version = "0.9.5" %}
+{% set version = "0.9.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/{{ name }}-{{ version }}.tar.gz
-  sha256: dece5067b4517c4b16cde332c491b4b3508249d2a8f4ba393229575d3c5241c0
+  sha256: defaf550bf6fe05e89afb9814dccc6bd643a3b0a8308801a2c04b76682b87383
 
 build:
   number: 0
