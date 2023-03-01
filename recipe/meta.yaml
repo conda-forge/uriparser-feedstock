@@ -13,7 +13,7 @@ build:
   number: 1
   skip: true  # [win and vc<14]
   run_exports:
-    - {{ pin_subpackage("uriparser", max_pin="x.x.x") }}
+    - {{ pin_subpackage("uriparser", max_pin="x") }}
 
 requirements:
   build:
@@ -47,5 +47,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - pitrou
-    - wesm
+    - kkraus14
+    - mariusvniekerk
