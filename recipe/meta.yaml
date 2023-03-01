@@ -10,8 +10,10 @@ source:
   sha256: 8e19250654a204af0858408b55dc78941382a8c824bf38fc7f2a95ca6e16d7a0
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
+  run_exports:
+    - {{ pin_subpackage("uriparser", max_pin="x.x.x") }}
 
 requirements:
   build:
