@@ -5,7 +5,7 @@ set -ex
 mkdir -p build-cpp
 pushd build-cpp
 
-cmake -GNinja \
+cmake ${CMAKE_ARGS} -GNinja \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_PREFIX_PATH=$PREFIX \
       -DCMAKE_INSTALL_LIBDIR=lib \
