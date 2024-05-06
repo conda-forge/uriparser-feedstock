@@ -1,5 +1,5 @@
 {% set name = "uriparser" %}
-{% set version = "0.9.7" %}
+{% set version = "0.9.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/{{ name }}-{{ version }}.tar.gz
-  sha256: 8e19250654a204af0858408b55dc78941382a8c824bf38fc7f2a95ca6e16d7a0
+  sha256: d6289387eaf2495e38ed80d709ad673fe04d63fad707badfee96f3d2dabc7c35
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage("uriparser", max_pin="x") }}
@@ -18,6 +18,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     # Even though uriparser is pure C, its CMakeLists.txt declares it as a C++ project
     - {{ compiler('cxx') }}
     - cmake
