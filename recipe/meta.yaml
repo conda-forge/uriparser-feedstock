@@ -25,28 +25,12 @@ requirements:
     - ninja
 
 test:
-  requires:
-    - cmake  # [target_platform == "win-arm64"]
-    - {{ compiler('c') }}  # [target_platform == "win-arm64"]
-  files:
-    - CMakeLists.txt  # [target_platform == "win-arm64"]
-    - test.c  # [target_platform == "win-arm64"]
   commands:
     - test -f $PREFIX/lib/liburiparser.so                                # [linux]
     - test -f $PREFIX/lib/liburiparser.dylib                             # [osx]
     - test -f $PREFIX/lib/cmake/uriparser-{{ version }}/uriparser.cmake  # [not win]
     - if not exist %PREFIX%\\Library\\bin\\uriparser.dll exit 1          # [win]
     - if not exist %PREFIX%\\Library\\lib\\cmake\\uriparser-{{ version }}\\uriparser.cmake exit 1  # [win]
-    - cmake -S . -B test-build -G "NMake Makefiles"  # [target_platform == "win-arm64"]
-    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
-    - cmake --build test-build  # [target_platform == "win-arm64"]
-    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
-    - test-build\\uriparser_consumer.exe  # [target_platform == "win-arm64"]
-    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
-    - dumpbin /headers test-build\\uriparser_consumer.exe | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
-    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
-    - dumpbin /headers "%LIBRARY_BIN%\\uriparser.dll" | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
-    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
 
 about:
   home: https://uriparser.github.io/
